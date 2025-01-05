@@ -1,7 +1,7 @@
 services:
   plex:
     container_name: plex
-    image: plexinc/pms-docker
+    image: plexinc/pms-docker:public
     restart: unless-stopped
     hostname: pc-audunn
     ports:
@@ -20,6 +20,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
     volumes:
-      - ~/plex/config:/config      
+      - ~/plex/config:/config     
       - ~/plex/transcode:/transcode
       - /mnt/e/media:/data
